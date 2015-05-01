@@ -45,15 +45,15 @@ $ git submodule update
 
 ### Messages boxes
 
-Generel the tag exist in two versions.
+Generel the tags works in two versions.
 
-**Short tag**
+**Simple tag**
 
 ```kirbytag
 (message_type: text)
 ```
 
-**Long text tag**
+**Complex tag**
 
 ```kirbytag
 (message_type)
@@ -121,7 +121,7 @@ Output
 #### Simple example
 
 ```kirbytag
-(figure: text)
+(figure caption: text)
 content
 (/figure)
 ```

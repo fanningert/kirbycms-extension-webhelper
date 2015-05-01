@@ -125,7 +125,10 @@ class WebHelper {
 			$tag_attr_string = substr($content, $attr_start_pos, $attr_length);
 			
 			if ( strlen($tag_attr_string) > 0 ) {
-				$attribute_array = preg_split("/([[:alnum:]]{0,}):[[:blank:]]/i", $name.$tag_attr_string, false, PREG_SPLIT_DELIM_CAPTURE);
+				if ( substr($tag_attr_string, 0, 1) == ":" )
+					$attribute_array = preg_split("/([[:alnum:]]{0,}):[[:blank:]]/i", $name.$tag_attr_string, false, PREG_SPLIT_DELIM_CAPTURE);
+				else 
+					$attribute_array = preg_split("/([[:alnum:]]{0,}):[[:blank:]]/i", $tag_attr_string, false, PREG_SPLIT_DELIM_CAPTURE);
 				
 				for ($i=1; $i<=(count($attribute_array) - 1); $i+=2) {
 					$return[WebHelper::BLOCK_ARRAY_VALUE_ATTRIBUTES][$attribute_array[$i]] = $attribute_array[$i+1];
