@@ -56,9 +56,23 @@ class WebHelper {
 		return \Html::tag("div", $text, $attr);
 	}
 	
-	public static function blockFigure( $content, $caption = false, $caption_top = false, $class = null ){
+	/**
+	 *
+	 * @param string $text
+	 * @return string
+	 */
+	public static function convert($text) {
+		$text = htmlentities ( $text );
+	
+		return $text;
+	}	
+
+	public static function blockFigure( $content, $caption = false, $caption_top = false, $caption_class = false ){
+		if ( $caption === false )
+			return $content;
+		
 		if ( $caption !== false )
-			$figcaption = \Html::tag("figcaption", $caption);
+			$figcaption = \Html::tag("figcaption", self::convert($caption));
 		
 		if ( $caption_top !== false )
 			$content = $figcaption . $content;
@@ -67,8 +81,8 @@ class WebHelper {
 	  
 	  $attr = array();
 	  
-	  if ( $class !== null && !empty( $class ) )
-	  	$attr['class'] = $class . ($caption_top !== false)? " figcaption-top" : " figcaption-bottom";
+	  if ( $caption_class !== false && !empty( $caption_class ) )
+	  	$attr['class'] = $caption_class . (($caption_top !== false)? " figcaption-top" : " figcaption-bottom");
 	  else 
 	  	$attr['class'] = ($caption_top !== false)? "figcaption-top" : "figcaption-bottom";
 	  
@@ -80,7 +94,7 @@ class WebHelper {
 	 * @param string $content The content for the extraction 
 	 * @return array|false Get false back, when no entry ist found.
 	 */
-	public static function getblock( $name, $content ) {
+	public static function getblock( $name, $content, $offset = 0) {
 	  $return = array();
 		// Return template
 		$return_tmp = array(
@@ -92,7 +106,7 @@ class WebHelper {
 		);
 		
 		// Search for the first entry
-		$first_entry_pos = strpos($content, "(".$name);
+		$first_entry_pos = strpos($content, "(".$name, $offset);
 		if ( $first_entry_pos === false )
 			return false;
 		
@@ -134,7 +148,7 @@ class WebHelper {
 					$attribute_array = preg_split("/([[:alnum:]\_]{0,}):[[:blank:]]/i", $tag_attr_string, false, PREG_SPLIT_DELIM_CAPTURE);
 				
 				for ($i=1; $i<=(count($attribute_array) - 1); $i+=2) {
-					$return[WebHelper::BLOCK_ARRAY_VALUE_ATTRIBUTES][$attribute_array[$i]] = $attribute_array[$i+1];
+					$return[WebHelper::BLOCK_ARRAY_VALUE_ATTRIBUTES][$attribute_array[$i]] = trim($attribute_array[$i+1]);
 				}
 			}
 
