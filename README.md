@@ -45,8 +45,6 @@ $ git submodule update
 
 ### Messages boxes
 
-http://www.jankoatwarpspeed.com/css-message-boxes-for-different-message-types/
-
 Generel the tag exist in two versions.
 
 **Short tag**
