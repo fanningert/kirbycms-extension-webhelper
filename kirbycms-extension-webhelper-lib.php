@@ -66,9 +66,12 @@ class WebHelper {
 	  	$content = $content . $figcaption;
 	  
 	  $attr = array();
-	  if ( $class !== null )
-	  	$attr['clas'] = $class;
-	  	
+	  
+	  if ( $class !== null && !empty( $class ) )
+	  	$attr['class'] = $class . ($caption_top !== false)? " figcaption-top" : " figcaption-bottom";
+	  else 
+	  	$attr['class'] = ($caption_top !== false)? "figcaption-top" : "figcaption-bottom";
+	  
 	  return \Html::tag("figure", $content, $attr);
 	}
 	
@@ -126,9 +129,9 @@ class WebHelper {
 			
 			if ( strlen($tag_attr_string) > 0 ) {
 				if ( substr($tag_attr_string, 0, 1) == ":" )
-					$attribute_array = preg_split("/([[:alnum:]]{0,}):[[:blank:]]/i", $name.$tag_attr_string, false, PREG_SPLIT_DELIM_CAPTURE);
+					$attribute_array = preg_split("/([[:alnum:]\_]{0,}):[[:blank:]]/i", $name.$tag_attr_string, false, PREG_SPLIT_DELIM_CAPTURE);
 				else 
-					$attribute_array = preg_split("/([[:alnum:]]{0,}):[[:blank:]]/i", $tag_attr_string, false, PREG_SPLIT_DELIM_CAPTURE);
+					$attribute_array = preg_split("/([[:alnum:]\_]{0,}):[[:blank:]]/i", $tag_attr_string, false, PREG_SPLIT_DELIM_CAPTURE);
 				
 				for ($i=1; $i<=(count($attribute_array) - 1); $i+=2) {
 					$return[WebHelper::BLOCK_ARRAY_VALUE_ATTRIBUTES][$attribute_array[$i]] = $attribute_array[$i+1];

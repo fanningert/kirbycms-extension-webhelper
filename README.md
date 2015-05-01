@@ -1,4 +1,4 @@
-# kirbycms-extension-webhelper
+# Kirby Extension - WebHelper
 A collection of little helper for usage in Kirby
 
 ## Installation
