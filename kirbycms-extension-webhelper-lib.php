@@ -71,8 +71,10 @@ class WebHelper {
 		if ( $caption === false )
 			return $content;
 		
-		if ( $caption !== false )
+		if ( is_string( $caption ) )
 			$figcaption = \Html::tag("figcaption", self::convert($caption));
+		else
+			$figcaption = "";
 		
 		if ( $caption_top !== false )
 			$content = $figcaption . $content;
