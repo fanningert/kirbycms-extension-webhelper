@@ -14,7 +14,8 @@ class WebHelper {
 	
 	public static function messageboxInformation( $text ){
 		$attr = array(
-				"class" => "messagebox messagebox-info"
+				"class" => "alert alert-info",
+				"role" => "alert"
 		);
 		
 		return self::messagebox( $text, $attr );
@@ -22,7 +23,8 @@ class WebHelper {
 	
 	public static function messageboxSuccess( $text ) {
 		$attr = array(
-				"class" => "messagebox messagebox-success"
+				"class" => "alert alert-success",
+				"role" => "alert"
 		);
 		
 		return self::messagebox( $text, $attr );
@@ -30,7 +32,8 @@ class WebHelper {
 	
 	public static function messageboxWarning( $text ) {
 		$attr = array(
-				"class" => "messagebox messagebox-warning"
+				"class" => "alert alert-warning",
+				"role" => "alert"
 		);
 		
 		return self::messagebox( $text, $attr );
@@ -38,7 +41,8 @@ class WebHelper {
 	
 	public static function messageboxError( $text ) {
 		$attr = array(
-				"class" => "messagebox messagebox-error"
+				"class" => "alert alert-error",
+				"role" => "alert"
 		);
 		
 		return self::messagebox( $text, $attr );
@@ -46,13 +50,15 @@ class WebHelper {
 	
 	public static function messageboxValidation( $text ) {
 		$attr = array(
-				"class" => "messagebox messagebox-validation"
+				"class" => "alert alert-validation",
+				"role" => "alert"
 		);
 		
 		return self::messagebox( $text, $attr );
 	}
 	
 	public static function messagebox( $text, $attr ){
+		$text = WebHelper::convert($text);
 		return \Html::tag("div", $text, $attr);
 	}
 	
@@ -106,6 +112,9 @@ class WebHelper {
 		  WebHelper::BLOCK_ARRAY_VALUE_STARTPOS => -1,					// Block start position
 			WebHelper::BLOCK_ARRAY_VALUE_ENDPOS => -1							// Block end position
 		);
+		
+		if ( !is_string($content) )
+			return false;
 		
 		// Search for the first entry
 		if ( strlen($content) <= $offset )

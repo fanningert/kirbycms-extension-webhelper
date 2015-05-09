@@ -13,7 +13,10 @@ kirbytext::$pre[] = function($kirbytext, $value) {
 	$key = 'info';
 	while ( ($block = WebHelper::getblock($key, $value, $offset)) !== false ) {
 		$offset = $block[WebHelper::BLOCK_ARRAY_VALUE_ENDPOS];
-		$block_new = WebHelper::messageboxInformation($block[WebHelper::BLOCK_ARRAY_VALUE_ATTRIBUTES][$key]);
+		if ( !empty($block[WebHelper::BLOCK_ARRAY_VALUE_CONTENT]) )
+			$block_new = WebHelper::messageboxInformation($block[WebHelper::BLOCK_ARRAY_VALUE_CONTENT]);
+		else
+			$block_new = WebHelper::messageboxInformation($block[WebHelper::BLOCK_ARRAY_VALUE_ATTRIBUTES][$key]);
 		$start = $block[WebHelper::BLOCK_ARRAY_VALUE_STARTPOS];
 		$length = $block[WebHelper::BLOCK_ARRAY_VALUE_ENDPOS]-$block[WebHelper::BLOCK_ARRAY_VALUE_STARTPOS];
 		
@@ -27,7 +30,10 @@ kirbytext::$pre[] = function($kirbytext, $value) {
 	$key = 'success';
 	while ( ($block = WebHelper::getblock($key, $value, $offset)) !== false ) {
 		$offset = $block[WebHelper::BLOCK_ARRAY_VALUE_ENDPOS];
-		$block_new = WebHelper::messageboxSuccess($block[WebHelper::BLOCK_ARRAY_VALUE_ATTRIBUTES][$key]);
+		if ( !empty($block[WebHelper::BLOCK_ARRAY_VALUE_CONTENT]) )
+			$block_new = WebHelper::messageboxSuccess($block[WebHelper::BLOCK_ARRAY_VALUE_CONTENT]);
+		else
+			$block_new = WebHelper::messageboxSuccess($block[WebHelper::BLOCK_ARRAY_VALUE_ATTRIBUTES][$key]);
 		$start = $block[WebHelper::BLOCK_ARRAY_VALUE_STARTPOS];
 		$length = $block[WebHelper::BLOCK_ARRAY_VALUE_ENDPOS]-$block[WebHelper::BLOCK_ARRAY_VALUE_STARTPOS];
 	
@@ -41,7 +47,10 @@ kirbytext::$pre[] = function($kirbytext, $value) {
 	$key = 'warning';
 	while ( ($block = WebHelper::getblock($key, $value, $offset)) !== false ) {
 		$offset = $block[WebHelper::BLOCK_ARRAY_VALUE_ENDPOS];
-		$block_new = WebHelper::messageboxWarning($block[WebHelper::BLOCK_ARRAY_VALUE_ATTRIBUTES][$key]);
+		if ( !empty($block[WebHelper::BLOCK_ARRAY_VALUE_CONTENT]) )
+			$block_new = WebHelper::messageboxWarning($block[WebHelper::BLOCK_ARRAY_VALUE_CONTENT]);
+		else
+			$block_new = WebHelper::messageboxWarning($block[WebHelper::BLOCK_ARRAY_VALUE_ATTRIBUTES][$key]);
 		$start = $block[WebHelper::BLOCK_ARRAY_VALUE_STARTPOS];
 		$length = $block[WebHelper::BLOCK_ARRAY_VALUE_ENDPOS]-$block[WebHelper::BLOCK_ARRAY_VALUE_STARTPOS];
 	
@@ -55,7 +64,10 @@ kirbytext::$pre[] = function($kirbytext, $value) {
 	$key = 'error';
 	while ( ($block = WebHelper::getblock($key, $value, $offset)) !== false ) {
 		$offset = $block[WebHelper::BLOCK_ARRAY_VALUE_ENDPOS];
-		$block_new = WebHelper::messageboxError($block[WebHelper::BLOCK_ARRAY_VALUE_ATTRIBUTES][$key]);
+		if ( !empty($block[WebHelper::BLOCK_ARRAY_VALUE_CONTENT]) )
+			$block_new = WebHelper::messageboxError($block[WebHelper::BLOCK_ARRAY_VALUE_CONTENT]);
+		else
+			$block_new = WebHelper::messageboxError($block[WebHelper::BLOCK_ARRAY_VALUE_ATTRIBUTES][$key]);
 		$start = $block[WebHelper::BLOCK_ARRAY_VALUE_STARTPOS];
 		$length = $block[WebHelper::BLOCK_ARRAY_VALUE_ENDPOS]-$block[WebHelper::BLOCK_ARRAY_VALUE_STARTPOS];
 	
@@ -69,7 +81,10 @@ kirbytext::$pre[] = function($kirbytext, $value) {
 	$key = 'validation';
 	while ( ($block = WebHelper::getblock($key, $value, $offset)) !== false ) {
 		$offset = $block[WebHelper::BLOCK_ARRAY_VALUE_ENDPOS];
-		$block_new = WebHelper::messageboxValidation($block[WebHelper::BLOCK_ARRAY_VALUE_ATTRIBUTES][$key]);
+		if ( !empty($block[WebHelper::BLOCK_ARRAY_VALUE_CONTENT]) )
+			$block_new = WebHelper::messageboxValidation($block[WebHelper::BLOCK_ARRAY_VALUE_CONTENT]);
+		else 
+			$block_new = WebHelper::messageboxValidation($block[WebHelper::BLOCK_ARRAY_VALUE_ATTRIBUTES][$key]);
 		$start = $block[WebHelper::BLOCK_ARRAY_VALUE_STARTPOS];
 		$length = $block[WebHelper::BLOCK_ARRAY_VALUE_ENDPOS]-$block[WebHelper::BLOCK_ARRAY_VALUE_STARTPOS];
 	
