@@ -72,6 +72,13 @@ Output
 <div class="messagebox messagebox-info">This is an important information.</div>
 ```
 
+##### PHP
+
+```php
+$text = "This is an important information.";
+at\fanninger\kirby\extension\webhelper\WebHelper::messageboxInformation( $text );
+```
+
 #### Success messages
 
 ```kirbytag
@@ -81,6 +88,13 @@ Output
 Output
 ```html
 <div class="messagebox messagebox-success">Hooooray! This messages says that operation succeeded!!</div>
+```
+
+##### PHP
+
+```php
+$text = "Hooooray! This messages says that operation succeeded!!";
+at\fanninger\kirby\extension\webhelper\WebHelper::messageboxSuccess( $text );
 ```
 
 #### Warning messages
@@ -94,6 +108,13 @@ Output
 <div class="messagebox messagebox-warning">Now this is a warning! One more click and you`ll face the consequences!</div>
 ```
 
+##### PHP
+
+```php
+$text = "Now this is a warning! One more click and you`ll face the consequences!";
+at\fanninger\kirby\extension\webhelper\WebHelper::messageboxWarning( $text );
+```
+
 #### Error messages
 
 ```kirbytag
@@ -105,6 +126,13 @@ Output
 <div class="messagebox messagebox-error">Oooops, this is an error message. You know what that means.</div>
 ```
 
+##### PHP
+
+```php
+$text = "Oooops, this is an error message. You know what that means.";
+at\fanninger\kirby\extension\webhelper\WebHelper::messageboxError( $text );
+```
+
 #### Validation messages
 
 ```kirbytag
@@ -114,6 +142,13 @@ Output
 Output
 ```html
 <div class="messagebox messagebox-validation">First name is a required field</div>
+```
+
+##### PHP
+
+```php
+$text = "First name is a required field";
+at\fanninger\kirby\extension\webhelper\WebHelper::messageboxValidation( $text );
 ```
 
 ### Figure
@@ -148,4 +183,18 @@ Output
   <figcaption>text</figcaption>
   content
 </figure>
+```
+
+### Calulcate age
+
+```kirbytag
+(age: 21/01/1972)
+```
+
+TODO: Add parameter for Timezone and dateformat
+
+##### PHP
+
+```php
+at\fanninger\kirby\extension\webhelper\WebHelper::calcAge($dayOfBirth, [dateformat], [Timezone]);
 ```

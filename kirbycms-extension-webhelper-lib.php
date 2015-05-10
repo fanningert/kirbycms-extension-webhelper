@@ -184,4 +184,9 @@ class WebHelper {
 		// search forward starting from end minus needle length characters
 		return $needle === "" || (($temp = strlen($haystack) - strlen($needle)) >= 0 && strpos($haystack, $needle, $temp) !== FALSE);
 	}
+	
+	public static function calcAge($dayOfBirth, $dayStringFormat = 'd/m/Y', $timeszone = 'Europe/Vienna'){
+		$tz  = new \DateTimeZone($timeszone);
+		return \DateTime::createFromFormat($dayStringFormat, $dayOfBirth, $tz)->diff(new \DateTime('now', $tz))->y;
+	}
 } 

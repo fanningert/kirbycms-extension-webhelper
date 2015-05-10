@@ -92,6 +92,20 @@ kirbytext::$pre[] = function($kirbytext, $value) {
 	}
 	
 	/*
+	 * Calculate age
+	 */
+	$offset = 0;
+	$key = 'age';
+	while ( ($block = WebHelper::getblock($key, $value, $offset)) !== false ) {
+		$offset = $block[WebHelper::BLOCK_ARRAY_VALUE_ENDPOS];
+		$block_new = WebHelper::calcAge($block[WebHelper::BLOCK_ARRAY_VALUE_ATTRIBUTES][$key]);
+		$start = $block[WebHelper::BLOCK_ARRAY_VALUE_STARTPOS];
+		$length = $block[WebHelper::BLOCK_ARRAY_VALUE_ENDPOS]-$block[WebHelper::BLOCK_ARRAY_VALUE_STARTPOS];
+	
+		$value = substr_replace($value, $block_new, $start, $length);
+	}
+	
+	/*
 	 * Figure
 	 */
 	$offset = 0;
