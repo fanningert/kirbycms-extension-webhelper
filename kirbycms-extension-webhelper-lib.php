@@ -58,7 +58,6 @@ class WebHelper {
 	}
 	
 	public static function messagebox( $text, $attr ){
-		$text = WebHelper::convert($text);
 		return \Html::tag("div", $text, $attr);
 	}
 	
@@ -169,6 +168,7 @@ class WebHelper {
 			if ( $return[WebHelper::BLOCK_ARRAY_VALUE_TYPE] === WebHelper::BLOCK_TYPE_COMPLEX ) {
 				// Get the content
 				$return[WebHelper::BLOCK_ARRAY_VALUE_CONTENT] = substr($content, $first_entry_pos_ending, $third_entry_pos-$first_entry_pos_ending);
+				$return[WebHelper::BLOCK_ARRAY_VALUE_CONTENT] = trim($return[WebHelper::BLOCK_ARRAY_VALUE_CONTENT], " \n\r");
 			}
 		}
 
