@@ -41,6 +41,12 @@ Go in the root directory of your git repository and execute following command to
 $ git submodule update
 ```
 
+## TODO
+
+* All function: Add config parameter to selectiv activate a function (KirbyTag)
+* Function `age`: Add optional Attributes for dateformat and timezone
+* Function `messagebox`: Add config parameter to define the the prefix for class (Default: `alert`)
+
 ## Content
 
 ### Messages boxes
@@ -78,7 +84,7 @@ at\fanninger\kirby\extension\webhelper\WebHelper::messageboxInformation( $text )
 ##### Output
 
 ```html
-<div class="messagebox messagebox-info">This is an important information.</div>
+<div class="alert alert-info">This is an important information.</div>
 ```
 
 #### Success messages
@@ -99,7 +105,7 @@ at\fanninger\kirby\extension\webhelper\WebHelper::messageboxSuccess( $text );
 ##### Output
 
 ```html
-<div class="messagebox messagebox-success">Hooooray! This messages says that operation succeeded!!</div>
+<div class="alert alert-success">Hooooray! This messages says that operation succeeded!!</div>
 ```
 
 #### Warning messages
@@ -120,7 +126,7 @@ at\fanninger\kirby\extension\webhelper\WebHelper::messageboxWarning( $text );
 ##### Output
 
 ```html
-<div class="messagebox messagebox-warning">Now this is a warning! One more click and you`ll face the consequences!</div>
+<div class="alert alert-warning">Now this is a warning! One more click and you`ll face the consequences!</div>
 ```
 
 #### Error messages
@@ -141,7 +147,7 @@ at\fanninger\kirby\extension\webhelper\WebHelper::messageboxError( $text );
 ##### Output
 
 ```html
-<div class="messagebox messagebox-error">Oooops, this is an error message. You know what that means.</div>
+<div class="alert alert-error">Oooops, this is an error message. You know what that means.</div>
 ```
 
 #### Validation messages
@@ -162,7 +168,7 @@ at\fanninger\kirby\extension\webhelper\WebHelper::messageboxValidation( $text );
 ##### Output
 
 ```html
-<div class="messagebox messagebox-validation">First name is a required field</div>
+<div class="alert alert-validation">First name is a required field</div>
 ```
 
 ### Figure
@@ -206,8 +212,6 @@ Output
 ```kirbytag
 (age: 21/01/1972)
 ```
-
-**TODO:** Add parameter for Timezone and dateformat
 
 ##### PHP
 
