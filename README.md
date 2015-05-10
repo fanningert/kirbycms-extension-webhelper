@@ -63,13 +63,10 @@ text
 
 #### Information messages
 
+##### Kirby
+
 ```kirbytag
 (info: This is an important information.)
-```
-
-Output
-```html
-<div class="messagebox messagebox-info">This is an important information.</div>
 ```
 
 ##### PHP
@@ -78,16 +75,18 @@ Output
 $text = "This is an important information.";
 at\fanninger\kirby\extension\webhelper\WebHelper::messageboxInformation( $text );
 ```
+##### Output
+
+```html
+<div class="messagebox messagebox-info">This is an important information.</div>
+```
 
 #### Success messages
 
+##### Kirby
+
 ```kirbytag
 (success: Hooooray! This messages says that operation succeeded!!)
-```
-
-Output
-```html
-<div class="messagebox messagebox-success">Hooooray! This messages says that operation succeeded!!</div>
 ```
 
 ##### PHP
@@ -97,15 +96,18 @@ $text = "Hooooray! This messages says that operation succeeded!!";
 at\fanninger\kirby\extension\webhelper\WebHelper::messageboxSuccess( $text );
 ```
 
+##### Output
+
+```html
+<div class="messagebox messagebox-success">Hooooray! This messages says that operation succeeded!!</div>
+```
+
 #### Warning messages
+
+##### Kirby
 
 ```kirbytag
 (warning: Now this is a warning! One more click and you`ll face the consequences!)
-```
-
-Output
-```html
-<div class="messagebox messagebox-warning">Now this is a warning! One more click and you`ll face the consequences!</div>
 ```
 
 ##### PHP
@@ -115,15 +117,18 @@ $text = "Now this is a warning! One more click and you`ll face the consequences!
 at\fanninger\kirby\extension\webhelper\WebHelper::messageboxWarning( $text );
 ```
 
+##### Output
+
+```html
+<div class="messagebox messagebox-warning">Now this is a warning! One more click and you`ll face the consequences!</div>
+```
+
 #### Error messages
+
+##### Kirby
 
 ```kirbytag
 (error: Oooops, this is an error message. You know what that means.)
-```
-
-Output
-```html
-<div class="messagebox messagebox-error">Oooops, this is an error message. You know what that means.</div>
 ```
 
 ##### PHP
@@ -133,15 +138,18 @@ $text = "Oooops, this is an error message. You know what that means.";
 at\fanninger\kirby\extension\webhelper\WebHelper::messageboxError( $text );
 ```
 
+##### Output
+
+```html
+<div class="messagebox messagebox-error">Oooops, this is an error message. You know what that means.</div>
+```
+
 #### Validation messages
+
+##### Kirby
 
 ```kirbytag
 (validation: First name is a required field)
-```
-
-Output
-```html
-<div class="messagebox messagebox-validation">First name is a required field</div>
 ```
 
 ##### PHP
@@ -149,6 +157,12 @@ Output
 ```php
 $text = "First name is a required field";
 at\fanninger\kirby\extension\webhelper\WebHelper::messageboxValidation( $text );
+```
+
+##### Output
+
+```html
+<div class="messagebox messagebox-validation">First name is a required field</div>
 ```
 
 ### Figure
@@ -187,14 +201,19 @@ Output
 
 ### Calulcate age
 
+##### Kirby
+
 ```kirbytag
 (age: 21/01/1972)
 ```
 
-TODO: Add parameter for Timezone and dateformat
+**TODO:** Add parameter for Timezone and dateformat
 
 ##### PHP
 
 ```php
-at\fanninger\kirby\extension\webhelper\WebHelper::calcAge($dayOfBirth, [dateformat], [Timezone]);
+$dayOfBirth = '21/01/1972';
+$dateFormat = 'd/m/Y';         //Optional
+$timezone = 'Europe/Brussels'; //Optional
+at\fanninger\kirby\extension\webhelper\WebHelper::calcAge($dayOfBirth, $dateFormat, $timezone);
 ```
