@@ -58,6 +58,7 @@ class WebHelper {
 	}
 	
 	public static function messagebox( $text, $attr ){
+		$text = kirbytext($text);
 		return \Html::tag("div", $text, $attr);
 	}
 	
