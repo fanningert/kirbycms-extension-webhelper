@@ -77,9 +77,10 @@ class WebHelper {
 		if ( $caption === false )
 			return $content;
 		
-		if ( is_string( $caption ) )
+		if ( is_string( $caption ) ) {
+			$caption = kirbytext($caption);
 			$figcaption = \Html::tag("figcaption", self::convert($caption));
-		else
+		} else
 			$figcaption = "";
 		
 		if ( $caption_top !== false )
