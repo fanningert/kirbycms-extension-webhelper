@@ -3,6 +3,13 @@
   "description": "Kirby Extension - WebHelper",
   "author": "Thomas Fanninger <thomas@fanninger.at>",
   "license": "GPL",
-  "version": "0.3.1",
-  "type": "kirby-plugin"
+  "version": "0.3.2",
+  "type": "kirby-plugin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fanningert/kirbycms-extension-webhelper"
+  },
+  "bugs": {
+    "url": "https://github.com/fanningert/kirbycms-extension-webhelper/issues"
+  }
 }
