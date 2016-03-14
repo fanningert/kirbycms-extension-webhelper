@@ -3,6 +3,12 @@ A collection of little helper for usage in Kirby
 
 ## Installation
 
+### KirbyCli
+
+```
+kirby plugin:install fanningert/kirbycms-extension-webhelper
+```
+
 ### GIT
 
 Go into the `{kirby_installation}/site/plugins` directory and execute following command.
@@ -24,6 +30,12 @@ $ git submodule update
 ### Manuell
 
 ## Update
+
+### KirbyCli
+
+```
+kirby plugin:update fanningert/kirbycms-extension-webhelper
+```
 
 ### GIT
 

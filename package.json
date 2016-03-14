@@ -1,0 +1,8 @@
+{
+  "name": "fanningert/kirbycms-extension-webhelper",
+  "description": "Kirby Extension - WebHelper",
+  "author": "Thomas Fanninger <thomas@fanninger.at>",
+  "license": "GPL",
+  "version": "0.3.1",
+  "type": "kirby-plugin"
+}

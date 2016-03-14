@@ -1,3 +1,7 @@
+# 0.3.1
+
+- Add KirbyCli support.
+
 # 0.3 (next release)
 
 - Block function support now following values for the attribute name. `a-zA-Z0-9_-`
